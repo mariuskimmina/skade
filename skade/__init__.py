@@ -2,10 +2,12 @@ import json
 import logging
 from flask import Flask
 from flask_login import LoginManager
+from flask_sqlalchemy import SQLAlchemy
 
 def create_app(test_config=None):
     app = Flask(__name__)
     login_manager = LoginManager()
+    db = SQLAlchemy()
 
     if test_config is None:
         with open('config/default.json')as f:
@@ -15,6 +17,7 @@ def create_app(test_config=None):
         app.config.from_mapping(test_config)
 
     login_manager.init_app(app)
+    db.init_app(app)
 
     #Disalbe the "Please login to view this page" message
     login_manager.login_message = u""
@@ -28,3 +31,7 @@ def create_app(test_config=None):
     login_manager.login_view = "auth.login_screen"
 
     return app
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run()

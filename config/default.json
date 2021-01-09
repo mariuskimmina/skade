@@ -1,5 +1,6 @@
 {
     "SECRET_KEY": "DUMMY_VALUE",
     "ENV": "development",
-    "FLASK_DEBUG": 1
+    "FLASK_DEBUG": true,
+    "SQLALCHEMY_DATABASE_URI": "postgresql://skadeuser:test@localhost/skadedb" 
 }
