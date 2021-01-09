@@ -12,6 +12,7 @@ psycopg2 = "*"
 werkzeug = "*"
 flask-wtf = "*"
 email-validator = "*"
+yara-python = "*"
 
 [dev-packages]
 pylint = "*"
