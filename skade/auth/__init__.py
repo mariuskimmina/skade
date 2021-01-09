@@ -6,3 +6,5 @@ auth = Blueprint(
     template_folder='../templates/auth',
     static_folder="../static/"
 )
+
+from . import views

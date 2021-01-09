@@ -27,12 +27,4 @@ def create_app(test_config=None):
 
     login_manager.login_view = "auth.login_screen"
 
-
-
-    @login_manager.user_loader
-    def load_user(id):
-        if id in users:
-            return users[id]
-        return None
-
     return app
