@@ -4,10 +4,11 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
+db = SQLAlchemy()
+
 def create_app(test_config=None):
     app = Flask(__name__)
     login_manager = LoginManager()
-    db = SQLAlchemy()
 
     if test_config is None:
         with open('config/default.json')as f:
