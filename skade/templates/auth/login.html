@@ -8,7 +8,7 @@
     <div class="login column is-4 ">
       <section class="section">
         <div class="has-text-centered">
-            <img class="login-logo" src="{{ url_for('static', filename='images/qgroup_logo.png') }}">
+            <img class="login-logo" src="{{ url_for('static', filename='images/skade-logo.png') }}">
         </div>
 
 
@@ -43,6 +43,9 @@
         <div class="has-text-centered">
             {{ form.submit(class_="button is-vcentered is-primary is-outlined") }}
         </div>
+        <div class="has-text-centered">
+            <a href="{{ url_for('auth.register_screen') }}"> Don't you have an account? Sign up now!</a>
+         </div>
         </form>
       </section>
     </div>

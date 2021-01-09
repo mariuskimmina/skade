@@ -9,6 +9,9 @@ flask-login = "*"
 flask-migrate = "*"
 flask-sqlalchemy = "*"
 psycopg2 = "*"
+werkzeug = "*"
+flask-wtf = "*"
+email-validator = "*"
 
 [dev-packages]
 pylint = "*"

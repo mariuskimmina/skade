@@ -7,10 +7,10 @@ from flask_migrate import Migrate
 
 db = SQLAlchemy()
 migrate = Migrate()
+login_manager = LoginManager()
 
 def create_app(test_config=None):
     app = Flask(__name__)
-    login_manager = LoginManager()
 
     if test_config is None:
         with open('config/default.json')as f:

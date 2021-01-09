@@ -6,3 +6,5 @@ upload = Blueprint(
     template_folder='../templates/upload',
     static_folder="../static/"
 )
+
+from . import views

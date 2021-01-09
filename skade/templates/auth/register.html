@@ -1,0 +1,83 @@
+{% extends "base.html" %} 
+{% block title %} Login {% endblock %} 
+{% block head %} 
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/auth/login.css') }}">
+{% endblock %}
+{% block content %}
+<div class="columns is-vcentered">
+    <div class="login column is-4 ">
+      <section class="section">
+        <div class="has-text-centered">
+            <img class="login-logo" src="{{ url_for('static', filename='images/skade-logo.png') }}">
+        </div>
+
+
+        <form action="" method="post" novalidate>
+        {{ form.csrf_token }}
+        <div class="field">
+            {{ form.email.label }}
+          <div class="control has-icons-right">
+            {{ form.email(size=25, class_="input") }}
+            {% for error in form.email.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+
+            <span class="icon is-small is-right">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+            {{ form.username.label }}
+          <div class="control has-icons-right">
+            {{ form.username(size=25, class_="input") }}
+            {% for error in form.username.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+
+            <span class="icon is-small is-right">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+            {{ form.password.label }}<br>
+          <div class="control has-icons-right">
+            {{ form.password(size=25, class_="input") }}
+            {% for error in form.password.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            <span class="icon is-small is-right">
+              <i class="fa fa-key"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+            {{ form.password2.label }}<br>
+          <div class="control has-icons-right">
+            {{ form.password2(size=25, class_="input") }}
+            {% for error in form.password2.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            <span class="icon is-small is-right">
+              <i class="fa fa-key"></i>
+            </span>
+          </div>
+        </div>
+        
+        <div class="has-text-centered">
+            {{ form.submit(class_="button is-vcentered is-primary is-outlined") }}
+        </div>
+        <div class="has-text-centered">
+            <a href="{{ url_for('auth.login_screen') }}"> Already have an Account? Sign in now!</a>
+         </div>
+        </form>
+      </section>
+    </div>
+    <div id="particles-js" class="interactive-bg column is-8">
+    </div>
+  </div>
+{% endblock %}
