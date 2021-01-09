@@ -2,6 +2,7 @@
     "SECRET_KEY": "DUMMY_VALUE",
     "ENV": "development",
     "FLASK_DEBUG": true,
+    "FLASK_APP": "skade.py",
     "SQLALCHEMY_DATABASE_URI": "postgresql://skadeuser:test@localhost/skadedb",
     "SQLALCHEMY_TRACK_MODIFICATIONS": false
 }

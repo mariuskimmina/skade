@@ -3,8 +3,10 @@ import logging
 from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
+migrate = Migrate()
 
 def create_app(test_config=None):
     app = Flask(__name__)
@@ -19,12 +21,14 @@ def create_app(test_config=None):
 
     login_manager.init_app(app)
     db.init_app(app)
+    migrate.init_app(app, db)
 
     #Disalbe the "Please login to view this page" message
     login_manager.login_message = u""
 
     from .upload import upload
     from .auth import auth
+    from .models import User
 
     app.register_blueprint(upload)
     app.register_blueprint(auth)
