@@ -1,0 +1,5 @@
+{
+    "SECRET_KEY": "DUMMY_VALUE",
+    "ENV": "development",
+    "FLASK_DEBUG": true
+}

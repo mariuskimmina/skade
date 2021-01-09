@@ -1,1 +1,4 @@
-from skade import 
+from skade import create_app
+
+app = create_app()
+app.run()
