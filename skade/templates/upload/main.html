@@ -1,7 +1,27 @@
-{% extends "base.html" %} 
-{% block title %} Login {% endblock %} 
+{% extends "base_nav.html" %} 
+{% block title %} skade {% endblock %} 
 {% block head %} 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dropzone/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dropzone/basic.min.css') }}">
 {% endblock %}
 {% block content %}
-<h1>test</h1>
+
+<section class="section">
+    <h1 id="headline" class="title has-text-centered">Skade File Upload</h1>
+    <div id="dropzone mb-5">
+        <form action="/upload" class="dropzone needsclick" id="file-dropzone">
+            <div class="dz-message needsclick">
+                <button type="button" class="dz-button">
+                Drop files here or click to upload.</button>
+            </div>
+        </form>
+    </div>
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/dropzone/dropzone_config.js') }}"> </script>
+    <script src="{{ url_for('static', filename='js/dropzone/dropzone.js') }}"> </script>
+{% endblock %}
+
+  
+</section>
 {% endblock %}
