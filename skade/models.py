@@ -12,6 +12,18 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+    
+    def get_id(self):
+        return self.id
     
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -22,7 +34,7 @@ class User(db.Model):
 
 @login_manager.user_loader
 def load_user(id):
-    return User.query.get(int(id))
+    return User.query.get(id)
 
 class Files(db.Model):
     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
