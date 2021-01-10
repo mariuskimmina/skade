@@ -12,20 +12,33 @@
     <h1 id="headline" class="title has-text-centered">Skade</h1>
     <div class="container">
         <div class="columns is-centered">
-            <div id="dropzone mb-5" style="width: 400;">
-                <form action="/upload" class="dropzone needsclick" id="file-dropzone">
+            <form action="/upload" enctype="multipart/form-data" method="POST">
+                <div class="dropzone" id="skadeDropzone" style="width: 400px;">
                     <div class="dz-message needsclick">
                         <button type="button" class="dz-button">
-                        Drop files here or click to upload.</button>
+                            Drop files here or click to upload.
+                        </button>
                     </div>
-                </form>
-            </div>
+                </div>
+                <button type="button" class="button" onclick="toggleOptions()">
+                    Show options
+                </button>
+                <div id="options" class="container is-hidden">
+                    test
+                </div>
+                <button type="submit" id="submit-all" class="button is-primary">Upload</button>
+            </form>
         </div>
     </div>
 
 {% block scripts %}
-    <script src="{{ url_for('static', filename='js/dropzone/dropzone_config.js') }}"> </script>
-    <script src="{{ url_for('static', filename='js/dropzone/dropzone.js') }}"> </script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery/jquery.min.js') }}"> </script>
+    <script src="{{ url_for('static', filename='js/vendor/dropzone/dropzone_config.js') }}"> </script>
+    <script src="{{ url_for('static', filename='js/vendor/dropzone/dropzone.min.js') }}"> </script>
+    <script src="{{ url_for('static', filename='js/upload/showoptions.js') }}"> </script>
+    <script>
+        Dropzone.autoDiscover = false;
+    </script>
 {% endblock %}
 
   

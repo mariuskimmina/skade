@@ -15,4 +15,4 @@ def main_screen():
 @upload.route('/upload', methods=["POST"])
 @login_required
 def upload_endpoint():
-    return redirect(url_for('main_screen'))
+    return redirect(url_for('upload.main_screen'))
