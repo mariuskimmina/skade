@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma/bulma.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base/footer.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome-4.7.0/css/font-awesome.css') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% block head %}
@@ -10,12 +11,22 @@
         {% endblock %}
     </head>
     <body>
-        <div id=content>
-            {% block navbar %}
-            {% endblock %}
-            {% block content %}
-            {% endblock %}
+        <div id="wrapper">
+            <div id=content>
+                {% block navbar %}
+                {% endblock %}
+                {% block content %}
+                {% endblock %}
+            </div>
         </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+            <strong>Skade</strong> by <a href="https://github.com/Mindslave">Marius Kimmina</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
+    </footer>
     </body>
     {% block scripts %}
     {% endblock %}

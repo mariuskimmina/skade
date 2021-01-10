@@ -6,15 +6,21 @@
 {% endblock %}
 {% block content %}
 
+
+
 <section class="section">
-    <h1 id="headline" class="title has-text-centered">Skade File Upload</h1>
-    <div id="dropzone mb-5">
-        <form action="/upload" class="dropzone needsclick" id="file-dropzone">
-            <div class="dz-message needsclick">
-                <button type="button" class="dz-button">
-                Drop files here or click to upload.</button>
+    <h1 id="headline" class="title has-text-centered">Skade</h1>
+    <div class="container">
+        <div class="columns is-centered">
+            <div id="dropzone mb-5" style="width: 400;">
+                <form action="/upload" class="dropzone needsclick" id="file-dropzone">
+                    <div class="dz-message needsclick">
+                        <button type="button" class="dz-button">
+                        Drop files here or click to upload.</button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 
 {% block scripts %}

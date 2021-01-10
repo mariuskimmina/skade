@@ -13,18 +13,29 @@
       </a>
     </div>
     <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="field is-grouped">
-          <p class="control">
-            <form action="/logout" method="post">
-              <button class="button" type="submit" name="logout">
-              <span class="icon">
-                <i class="fa fa-sign-out"></i>
-              </span>
-              </button>
-            </form>
-            </a>
-          </p>
+
+       <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          <i class="fa fa-user">
+            {{ current_user.username }}
+          </i>
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            <span class="mr-1">Logout</span>
+            <i class="fa fa-sign-out"> </i>
+          </a>
         </div>
       </div>
     </div>
