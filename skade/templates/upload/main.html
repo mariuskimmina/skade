@@ -13,20 +13,31 @@
     <div class="container">
         <div class="columns is-centered">
             <form action="/upload" enctype="multipart/form-data" method="POST">
-                <div class="dropzone" id="skadeDropzone" style="width: 400px;">
+                <div class="dropzone mb-2" id="skadeDropzone" style="width: 400px;">
                     <div class="dz-message needsclick">
                         <button type="button" class="dz-button">
                             Drop files here or click to upload.
                         </button>
                     </div>
                 </div>
-                <button type="button" class="button" onclick="toggleOptions()">
-                    Show options
-                </button>
-                <div id="options" class="container is-hidden">
-                    test
+                <div>
+                    <button type="button" class="button" onclick="toggleOptions()">
+                        Show options
+                    </button>
+                    <button type="submit" id="submit-all" class="button is-primary">
+                        Upload
+                    </button>
                 </div>
-                <button type="submit" id="submit-all" class="button is-primary">Upload</button>
+                <div id="options" class="container is-hidden">
+                    <div class="field">
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                Scan with yara rules
+                            </label>
+                        </div>
+                        </div>
+                </div>
             </form>
         </div>
     </div>
