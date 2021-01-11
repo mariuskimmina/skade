@@ -6,6 +6,7 @@ from skade import db
 from .forms import LoginForm, RegisterForm
 from flask import render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_user
+from sqlalchemy.exc import OperationalError
 
 
 @auth.route('/login', methods=["GET", "POST"])
@@ -16,7 +17,11 @@ def login_screen():
     if form.validate_on_submit():
         username = request.form.get('username')
         password = request.form.get('password')
-        user = User.query.filter_by(username=username).first()
+        try:
+            user = User.query.filter_by(username=username).first()
+        except OperationalError as err:
+            current_app.logger.error("Could not connect to Database: %s", err)
+            return redirect(url_for('auth.login_screen'))
         if user is None or not user.check_password(password):
             current_app.logger.info("login failed for user: %s", username)
             flash('Invalid username or password')
