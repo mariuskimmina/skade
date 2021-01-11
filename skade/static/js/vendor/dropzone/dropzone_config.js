@@ -1,29 +1,31 @@
 window.onload = function() {
   $("#skadeDropzone").dropzone({
     url: 'upload',
-    paramName: "file",
-    maxFilesize: 500000,
-    timeout: 0,
+    maxFilesize: 2000,
     autoProcessQueue: false,
     uploadMultiple: true,
     parallelUploads: 100,
     maxFiles: 100,
     createImageThumbnails: false,
     init: function() {
-        dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
+        dzClosure = this;
 
         // for Dropzone to process the queue (instead of default form behavior):
         document.getElementById("submit-all").addEventListener("click", function(e) {
-            console.log("YES")
-            // Make sure that the form isn't actually being sent.
             e.preventDefault();
             e.stopPropagation();
             dzClosure.processQueue();
         });
 
         //send all the form data along with the files:
-        this.on("sendingmultiple", function(data, xhr, formData) {
+        this.on("sending", function(data, xhr, formData) {
             formData.append("yarascan", jQuery("#yarascan").val());
+            console.log(formData.get('yarascan'))
+            console.log(formData.get('file'))
+            console.log(formData.get('files'))
+        });
+        myDropzone.on('errormultiple', function(files, response) {
+          alert(response);
         });
     }
   })
