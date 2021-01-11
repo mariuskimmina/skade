@@ -20,9 +20,6 @@ window.onload = function() {
         //send all the form data along with the files:
         this.on("sending", function(data, xhr, formData) {
             formData.append("yarascan", jQuery("#yarascan").val());
-            console.log(formData.get('yarascan'))
-            console.log(formData.get('file'))
-            console.log(formData.get('files'))
         });
         myDropzone.on('errormultiple', function(files, response) {
           alert(response);
