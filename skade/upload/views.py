@@ -17,6 +17,6 @@ def main_screen():
 def upload_endpoint():
     print("upload endpoint has been hit")
     print(request.form)
-    uploaded_file = request.form.get('file')
+    uploaded_file = request.form.get('test')
     print(uploaded_file)
     return redirect(url_for('upload.main_screen'))
