@@ -15,8 +15,9 @@ def main_screen():
 @upload.route('/upload', methods=["POST"])
 @login_required
 def upload_endpoint():
-    print("upload endpoint has been hit")
-    print(request.form)
-    uploaded_file = request.form.get('test')
-    print(uploaded_file)
+    current_app.logger.debug("Upload Endpoint has been hit")
+    uploaded_file = request.files['file[0]']
+    read_file = uploaded_file.read()
+    print(read_file)
+    print(uploaded_file.filename)
     return redirect(url_for('upload.main_screen'))

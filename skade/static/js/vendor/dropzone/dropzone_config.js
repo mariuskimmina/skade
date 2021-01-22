@@ -12,13 +12,14 @@ window.onload = function() {
 
         // for Dropzone to process the queue (instead of default form behavior):
         document.getElementById("submit-all").addEventListener("click", function(e) {
+            console.log("submit button has been hit!")
             e.preventDefault();
             e.stopPropagation();
             dzClosure.processQueue();
         });
 
         //send all the form data along with the files:
-        this.on("sendingmultiple", function(file, xhr, form) {
+        this.on("sendingmultiple", function(files, xhr, form) {
             form.append("yarascan", jQuery("#yarascan").val());
         });
         this.on('error', function(files, response) {
