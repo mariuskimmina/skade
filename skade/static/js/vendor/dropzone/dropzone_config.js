@@ -11,7 +11,7 @@ window.onload = function() {
         dzClosure = this;
 
         // for Dropzone to process the queue (instead of default form behavior):
-        document.getElementById("submit-all").addEventListener("click", function(e) {
+        document.getElementById("submit").addEventListener("click", function(e) {
             console.log("submit button has been hit!")
             e.preventDefault();
             e.stopPropagation();
