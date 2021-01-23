@@ -22,7 +22,6 @@ def start(susfile):
 
     matches = rules.match(data=susfile.read())
 
-    print(matches)
     if matches:
         current_app.logger.debug("Match found")
         return False
@@ -52,6 +51,10 @@ def compile_yara_rules(rulefolder):
         rules = yara.compile(filepaths=dFilepaths)
     except yara.SyntaxError as err:
         current_app.logger.error("Syntax error in Yara rule encountered")
+        current_app.logger.error(err)
+        return None
+    except yara.Error as err:
+        current_app.logger.error("Unkown error during compilation of Yara rules")
         current_app.logger.error(err)
         return None
     return rules
