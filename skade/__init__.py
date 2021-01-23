@@ -11,6 +11,7 @@ login_manager = LoginManager()
 
 def create_app(test_config=None):
     app = Flask(__name__)
+    app.logger.setLevel(logging.DEBUG)
 
     if test_config is None:
         with open('config/default.json')as f:
