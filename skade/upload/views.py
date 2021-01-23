@@ -29,3 +29,9 @@ def upload_endpoint():
             current_app.logger.debug("No Rules")
 
     return redirect(url_for('upload.main_screen'))
+
+
+@upload.route('/result/<filehash>', methods=["GET", "POST"])
+@login_required
+def result_page(filehash):
+

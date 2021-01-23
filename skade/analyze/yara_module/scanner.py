@@ -20,6 +20,14 @@ def start(susfile):
         current_app.logger.error("No yara rules found, aborting scan")
         raise NoRulesError
 
+    matches = rules.match(data=susfile.read())
+
+    print(matches)
+    if matches:
+        current_app.logger.debug("Match found")
+        return False
+
+    current_app.logger.debug("No Match found")
     return True
 
 
