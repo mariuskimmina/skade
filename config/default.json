@@ -3,7 +3,7 @@
     "ENV": "development",
     "FLASK_DEBUG": true,
     "FLASK_APP": "skade.py",
-    "SQLALCHEMY_DATABASE_URI": "postgresql://skadeuser:test@localhost/skadedb",
+    "SQLALCHEMY_DATABASE_URI": "postgresql://skadeuser:test@skade_db/skadedb",
     "SQLALCHEMY_TRACK_MODIFICATIONS": false,
 
     "YARA_RULES": "/usr/share/yararules/"

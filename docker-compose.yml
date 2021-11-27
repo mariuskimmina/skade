@@ -1,8 +1,8 @@
 version: "3.3"
-
 services:
   skade-db:
     container_name: skade-db
+    hostname: skade_db
     image: postgres:12.3-alpine
     env_file:
       - env/postgres.env
@@ -13,7 +13,25 @@ services:
     ports:
     - target: 5432
       published: 5432
+    networks:
+      - skade_net
+  skade:
+    container_name: skade
+    hostname: skade
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    ports:
+      - target: 5000
+        published: 5000
+    networks:
+      - skade_net
 
 
 volumes:
   postgres_data:
+
+networks:
+  skade_net:
+    driver: bridge
+

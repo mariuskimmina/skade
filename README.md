@@ -4,11 +4,14 @@ Upload files and have them being scanned against local set of yara rules to poss
 
 ## Setup
 
+The easiest way to setup the project is to use `docker-compose`
+
 ```
 docker-compose up --build
 ```
 
-Technologies used:
+## Technologies used:
+
 * Python3
 * Flask
 * Dropzone.js
