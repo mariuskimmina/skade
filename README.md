@@ -4,7 +4,9 @@ Upload files and have them being scanned against local set of yara rules to poss
 
 ## Setup
 
-The easiest way to setup the project is to use `docker-compose`
+The easiest way to setup the project is to use `docker-compose`.
+First you need to rename the `env/postgres.env.dummy` to `postgres.env` 
+and replace all the placeholder values with ones that you want to use.
 
 ```
 docker-compose up --build
