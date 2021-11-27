@@ -18,6 +18,17 @@ docker-compose up --build
 * Docker
 * YARA rules
 
+## Scan results
+
+There is currently no visible representation of the scan result in the web interface.
+You can see if your file matched a yara rule in the Logs
+
+```
+skade       | [2021-11-27 14:50:54,626] DEBUG in scanner: start applying Yara rules
+skade       | [2021-11-27 14:50:54,626] DEBUG in scanner: Compiling yara rules from source: /usr/share/yararules/
+skade       | [2021-11-27 14:50:54,628] DEBUG in scanner: No Match found
+```
+
 ## Screenshots
 
 ![Mainscreen](media/images/skade-mainscreen.png)
