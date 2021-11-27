@@ -21,4 +21,4 @@ docker-compose up --build
 ## Screenshots
 
 ![Mainscreen](media/images/skade-mainscreen.png)
-![Login](media/images/skade-login.png)
+![Login](media/images/skade-loginscreen.png)
