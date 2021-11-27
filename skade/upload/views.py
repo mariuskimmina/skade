@@ -34,4 +34,4 @@ def upload_endpoint():
 @upload.route('/result/<filehash>', methods=["GET", "POST"])
 @login_required
 def result_page(filehash):
-
+    pass
