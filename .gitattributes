@@ -1,2 +1,4 @@
-skade/static/css/font-awesome-4.7.0/ export-ignore
+skade/static/css/font-awesome-4.7.0/* linguist-vendored
+*.scss linguist-vendored
+*.less linguist-vendored
 
